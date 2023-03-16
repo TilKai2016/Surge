@@ -1,0 +1,9 @@
+#!name=v2ex-DailyBonus
+#!desc=自动领取每日奖励
+
+[Script]
+http-request ^https:\/\/www\.v2ex\.com\/mission\/daily script-path=http://git.sailuntire.com:8929/longhai.chi/surge/-/raw/master/JS/v2ex/v2ex.cookie.js?inline=false
+cron "16 0 11 * * *" script-path=http://git.sailuntire.com:8929/longhai.chi/surge/-/raw/master/JS/v2ex/v2ex.js?inline=false
+
+[MITM]
+hostname = %APPEND% *.v2ex.com
